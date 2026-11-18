@@ -1,10 +1,12 @@
-"""Containerized task API, with a PostgreSQL service or local SQLite tests."""
-from datetime import UTC, datetime
+"""Containerized task API backed by PostgreSQL."""
+
 import os
+from datetime import UTC, datetime
 
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import URL, text
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 
@@ -23,6 +25,10 @@ class Task(db.Model):
     completed: Mapped[bool] = mapped_column(default=False)
     created_at: Mapped[datetime] = mapped_column(default=lambda: datetime.now(UTC))
 
+    def __init__(self, title: str, description: str = "") -> None:
+        self.title = title
+        self.description = description
+
     def to_dict(self) -> dict[str, int | str | bool]:
         return {"id": self.id, "title": self.title, "description": self.description,
                 "completed": self.completed, "created_at": self.created_at.isoformat()}
@@ -30,16 +36,15 @@ class Task(db.Model):
 
 def create_app(database_uri: str | None = None) -> Flask:
     app = Flask(__name__)
+    uri: str | URL
     if database_uri is not None:
         uri = database_uri
     elif os.getenv("DATABASE_URL"):
         uri = os.environ["DATABASE_URL"]
-    elif os.getenv("DB_HOST"):
-        uri = URL.create("postgresql+psycopg", username=os.environ["POSTGRES_USER"],
+    else:
+        uri = URL.create("postgresql+psycopg2", username=os.environ["POSTGRES_USER"],
                          password=os.environ["POSTGRES_PASSWORD"], host=os.environ["DB_HOST"],
                          database=os.environ["POSTGRES_DB"])
-    else:
-        uri = "sqlite:///:memory:"
     app.config["SQLALCHEMY_DATABASE_URI"] = uri
     db.init_app(app)
 
@@ -51,7 +56,7 @@ def create_app(database_uri: str | None = None) -> Flask:
     def health():
         try:
             db.session.execute(text("SELECT 1"))
-        except Exception:
+        except SQLAlchemyError:
             db.session.rollback()
             return jsonify(status="unhealthy"), 503
         return jsonify(status="healthy")

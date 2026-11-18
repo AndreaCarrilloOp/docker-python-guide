@@ -1,8 +1,9 @@
 """Redis-backed API. Blocking Redis calls run in FastAPI's worker threads."""
-from datetime import UTC, datetime
-import os
 
-from fastapi import FastAPI, HTTPException
+import os
+from datetime import UTC, datetime
+
+from fastapi import FastAPI, HTTPException, Response
 from pydantic import BaseModel, Field
 from redis import Redis
 from redis.exceptions import RedisError
@@ -38,13 +39,23 @@ def health() -> dict[str, str]:
 
 @app.get("/users", response_model=list[User])
 def get_users() -> list[User]:
-    return [User.model_validate_json(data) for key in cache.scan_iter("user:*")
-            if (data := cache.get(key)) is not None]
+    users = []
+    for key in cache.scan_iter("user:*"):
+        data = cache.get(key)
+        if isinstance(data, str):
+            users.append(User.model_validate_json(data))
+    return users
 
 
 @app.post("/users", response_model=User, status_code=201)
 def create_user(user: UserCreate) -> User:
-    result = User(id=int(cache.incr("user_counter")), created_at=datetime.now(UTC).isoformat(), **user.model_dump())
+    user_id = cache.incr("user_counter")
+    if not isinstance(user_id, int):
+        raise HTTPException(503, "Unexpected Redis response")
+    result = User(
+        id=user_id, name=user.name, email=user.email,
+        created_at=datetime.now(UTC).isoformat(),
+    )
     cache.set(f"user:{result.id}", result.model_dump_json(), ex=3600)
     return result
 
@@ -54,18 +65,27 @@ def get_user(user_id: int) -> User:
     data = cache.get(f"user:{user_id}")
     if data is None:
         raise HTTPException(404, "User not found")
+    if not isinstance(data, str):
+        raise HTTPException(503, "Unexpected Redis response")
     return User.model_validate_json(data)
 
 
 @app.delete("/users/{user_id}", status_code=204)
-def delete_user(user_id: int) -> None:
-    if not cache.delete(f"user:{user_id}"):
+def delete_user(user_id: int) -> Response:
+    removed = cache.delete(f"user:{user_id}")
+    if not isinstance(removed, int):
+        raise HTTPException(503, "Unexpected Redis response")
+    if removed == 0:
         raise HTTPException(404, "User not found")
+    return Response(status_code=204)
 
 
 @app.get("/cache/stats")
 def get_cache_stats() -> dict[str, int]:
-    return {"total_keys": cache.dbsize()}
+    count = cache.dbsize()
+    if not isinstance(count, int):
+        raise HTTPException(503, "Unexpected Redis response")
+    return {"total_keys": count}
 
 
 @app.delete("/cache/flush")

@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: postgres:16-alpine
+          image: postgres:15-alpine
           env:
             - name: POSTGRES_USER
               value: guide

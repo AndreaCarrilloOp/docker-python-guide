@@ -1,33 +1,48 @@
-# fastapi-basic
+# Module 01 — Containerization · FastAPI
 
-[Module guide](../README.md)
+[Learning path](../../../README.md) · [Next lesson →](../../../modules/02-development/fastapi-redis/README.md)
 
-A standalone HTTP service.
+## What you'll learn
 
-## Run
+Package a minimal HTTP application into a Docker image.
 
-From the repository root, enter this directory:
+## Prerequisites
+
+Python 3.11, Docker and Git. 
+
+## What's new
+
+Application source, dependency file, Dockerfile and .dockerignore.
+
+## Step 1 — Create a minimal Python application
+
+Read [main.py](main.py) and [requirements.txt](requirements.txt). Create a framework instance, a root route and a GET /health route that returns JSON. Run locally after installing requirements: uvicorn main:app --host 127.0.0.1 --port 8000.
+
+## Step 2 — Containerize
+
+Read [Dockerfile](Dockerfile). Start from python:3.11-slim, set WORKDIR, copy/install requirements before source for layer caching, create a non-root user, expose port 8000, add a health check and set CMD. Exclude local files using [.dockerignore](.dockerignore). Docker init is an optional way to generate a starter Dockerfile; compare it to the supplied file rather than overwriting the reference.
+
+## Step 3 — Build and run
 
 ```bash
 cd modules/01-containerization/fastapi-basic
-```
-
-```bash
 docker build -t guide-fastapi:01 .
 docker run --rm -p 127.0.0.1:8000:8000 guide-fastapi:01
 ```
 
-## Verify
+## Validate
 
-Open http://localhost:8000/health. Interactive API documentation: http://localhost:8000/docs.
-
-## Tests
-
-Use a fresh Python 3.11 virtual environment in this directory. On Bash, run `python -m venv .venv` and `source .venv/bin/activate`; on PowerShell, run `python -m venv .venv` and `.\.venv\Scripts\Activate.ps1`.
-
-```bash
-python -m pip install -r requirements.txt -r requirements-dev.txt
-python -m pytest tests -q
+In a second terminal: ```bash
+curl -f http://localhost:8000/health
 ```
+Expected: {"status":"healthy"}. Visit /docs to explore the API. Stop with Ctrl+C.
 
-Continue to the next checkpoint in the module navigation.
+## Troubleshooting
+
+If port 8000 is busy, stop the previous container. If the build fails, inspect the Docker build output.
+
+## Key takeaway
+
+An image packages the app; a container runs it.
+
+[Learning path](../../../README.md) · [Next lesson →](../../../modules/02-development/fastapi-redis/README.md)
