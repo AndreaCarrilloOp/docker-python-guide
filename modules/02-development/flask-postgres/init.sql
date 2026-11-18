@@ -1,5 +1,4 @@
--- Sample data for development
-INSERT INTO task (title, description, completed) VALUES 
-('Learn Docker Compose', 'Understand how to use Docker Compose for local development', false),
-('Setup PostgreSQL', 'Configure PostgreSQL database with Flask application', true),
-('Implement CRUD API', 'Create REST API endpoints for task management', false);
+-- Optional sample data; run after the application creates the tasks table.
+INSERT INTO tasks (title, description, completed, created_at) VALUES
+('Learn Docker Compose', 'Explore service networking', false, CURRENT_TIMESTAMP),
+('Implement CRUD API', 'Practice REST endpoints', false, CURRENT_TIMESTAMP);
