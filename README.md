@@ -8,10 +8,11 @@ Learn to containerize, develop, test and deploy Python applications with Docker 
 
 ## Choose your path
 
-| Flask | FastAPI |
-| :---: | :---: |
-| PostgreSQL | Redis |
-| [**Start Flask →**](tracks/FLASK.md) | [**Start FastAPI →**](tracks/FASTAPI.md) |
+<p align="center">
+  <a href="tracks/FLASK.md"><img src="assets/tracks/flask.svg" width="244" height="244" alt="Start Flask — PostgreSQL, five modules" /></a>
+  &nbsp;
+  <a href="tracks/FASTAPI.md"><img src="assets/tracks/fastapi.svg" width="244" height="244" alt="Start FastAPI — Redis, five modules" /></a>
+</p>
 
 ---
 
