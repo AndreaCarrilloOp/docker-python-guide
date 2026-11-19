@@ -1,6 +1,8 @@
 # 04 · CI/CD with GitHub Actions
 
-**Flask track**
+**Flask track · Module 04/05** · ●●●●○
+
+[All modules](../../tracks/FLASK.md) · [Solution ↓](#solution)
 
 Automate functional tests and container verification for the same application.
 
@@ -33,6 +35,12 @@ Review the job for Flask in [Actions](https://github.com/AndreaCarrilloOp/docker
 
 Stop Compose using [cleanup instructions](../../docs/lab-setup.md#compose).
 
+## Solution
+
+Functional HTTP tests and the shared CI workflow; no separate application copy.
+
+[API tests](../02-development/flask-postgres/tests/test_app.py) · [GitHub Actions workflow](../../.github/workflows/ci.yml) · [Application](../02-development/flask-postgres/)
+
 ---
 
-[Flask modules](../../tracks/FLASK.md) · [← Module 03](../03-linting-typing/FLASK.md) · [Module 05 →](../05-deployment/FLASK.md)
+[← Module 03](../03-linting-typing/FLASK.md) · [All modules](../../tracks/FLASK.md) · [Module 05 →](../05-deployment/FLASK.md)

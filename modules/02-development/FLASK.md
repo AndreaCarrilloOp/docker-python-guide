@@ -1,6 +1,8 @@
 # 02 · Development
 
-**Flask track**
+**Flask track · Module 02/05** · ●●○○○
+
+[All modules](../../tracks/FLASK.md) · [Solution ↓](#solution)
 
 Extend the basic application with PostgreSQL using Docker Compose.
 
@@ -48,6 +50,14 @@ Open http://localhost:8080. Choose PostgreSQL and use server db, database, usern
 
 Stop the lab following [Compose cleanup](../../docs/lab-setup.md#compose) before continuing.
 
+## Solution
+
+Complete service-backed application, extended from module 01.
+
+[Project files](flask-postgres/) · [app.py](flask-postgres/app.py) · [Compose](flask-postgres/compose.yaml) · [Dockerfile](flask-postgres/Dockerfile) · [Requirements](flask-postgres/requirements.txt)
+
+[Environment template](flask-postgres/.env.example) · [Optional seed SQL](flask-postgres/init.sql)
+
 ---
 
-[Flask modules](../../tracks/FLASK.md) · [← Module 01](../01-containerization/FLASK.md) · [Module 03 →](../03-linting-typing/FLASK.md)
+[← Module 01](../01-containerization/FLASK.md) · [All modules](../../tracks/FLASK.md) · [Module 03 →](../03-linting-typing/FLASK.md)

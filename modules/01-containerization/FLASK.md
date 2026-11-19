@@ -1,6 +1,8 @@
 # 01 · Containerization
 
-**Flask track**
+**Flask track · Module 01/05** · ●○○○○
+
+[All modules](../../tracks/FLASK.md) · [Solution ↓](#solution)
 
 Package a minimal HTTP application into a Docker image.
 
@@ -32,6 +34,12 @@ Expected: HTTP 200 and `{"status":"healthy"}`. Open http://localhost:5000/ for t
 
 Stop the container with Ctrl+C before continuing. [Troubleshooting](../../docs/lab-setup.md#common-checks).
 
+## Solution
+
+Complete standalone container example.
+
+[Project files](flask-basic/) · [app.py](flask-basic/app.py) · [Dockerfile](flask-basic/Dockerfile) · [Requirements](flask-basic/requirements.txt) · [.dockerignore](flask-basic/.dockerignore)
+
 ---
 
-[Flask modules](../../tracks/FLASK.md) · [Module 02 →](../02-development/FLASK.md)
+[All modules](../../tracks/FLASK.md) · [Module 02 →](../02-development/FLASK.md)

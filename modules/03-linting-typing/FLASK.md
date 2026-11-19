@@ -1,6 +1,8 @@
 # 03 · Linting and typing
 
-**Flask track**
+**Flask track · Module 03/05** · ●●●○○
+
+[All modules](../../tracks/FLASK.md) · [Solution ↓](#solution)
 
 Improve the application from module 02 without creating a new copy.
 
@@ -38,6 +40,12 @@ pre-commit run --all-files
 
 See [.pre-commit-config.yaml](../../.pre-commit-config.yaml). If formatting changes files, review them and rerun the hooks. Expected: no lint or type errors and passing hooks.
 
+## Solution
+
+The module 02 application, with its shared quality configuration.
+
+[Application source](../02-development/flask-postgres/app.py) · [Quality rules](../../pyproject.toml) · [Development requirements](../../requirements-dev.txt) · [Pre-commit](../../.pre-commit-config.yaml)
+
 ---
 
-[Flask modules](../../tracks/FLASK.md) · [← Module 02](../02-development/FLASK.md) · [Module 04 →](../04-cicd/FLASK.md)
+[← Module 02](../02-development/FLASK.md) · [All modules](../../tracks/FLASK.md) · [Module 04 →](../04-cicd/FLASK.md)

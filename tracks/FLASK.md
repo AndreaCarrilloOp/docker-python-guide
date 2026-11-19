@@ -1,4 +1,4 @@
-# Flask Track
+# <img src="../assets/tracks/flask-icon.svg" width="32" height="32" alt="" /> Flask Track
 
 Build, develop, test and deploy a Flask application with PostgreSQL and Docker.
 
@@ -6,12 +6,12 @@ Build, develop, test and deploy a Flask application with PostgreSQL and Docker.
 
 ## Modules
 
-| Module | Flask |
-| :--- | :---: |
-| 01 · Containerization | [Lesson](../modules/01-containerization/FLASK.md) |
-| 02 · Development | [Lesson](../modules/02-development/FLASK.md) |
-| 03 · Linting and typing | [Lesson](../modules/03-linting-typing/FLASK.md) |
-| 04 · CI/CD with GitHub Actions | [Lesson](../modules/04-cicd/FLASK.md) |
-| 05 · Test your deployment | [Lesson](../modules/05-deployment/FLASK.md) |
+| Module | Tutorial | Solution |
+| :--- | :---: | :---: |
+| 01 · Containerization | [Read](../modules/01-containerization/FLASK.md) | [View](../modules/01-containerization/FLASK.md#solution) |
+| 02 · Development | [Read](../modules/02-development/FLASK.md) | [View](../modules/02-development/FLASK.md#solution) |
+| 03 · Linting and typing | [Read](../modules/03-linting-typing/FLASK.md) | [View](../modules/03-linting-typing/FLASK.md#solution) |
+| 04 · CI/CD with GitHub Actions | [Read](../modules/04-cicd/FLASK.md) | [View](../modules/04-cicd/FLASK.md#solution) |
+| 05 · Test your deployment | [Read](../modules/05-deployment/FLASK.md) | [View](../modules/05-deployment/FLASK.md#solution) |
 
 [**Start module 01 →**](../modules/01-containerization/FLASK.md)

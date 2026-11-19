@@ -1,6 +1,8 @@
 # 04 · CI/CD with GitHub Actions
 
-**FastAPI track**
+**FastAPI track · Module 04/05** · ●●●●○
+
+[All modules](../../tracks/FASTAPI.md) · [Solution ↓](#solution)
 
 Automate functional tests and container verification for the same application.
 
@@ -33,6 +35,12 @@ Review the job for FastAPI in [Actions](https://github.com/AndreaCarrilloOp/dock
 
 Stop Compose using [cleanup instructions](../../docs/lab-setup.md#compose).
 
+## Solution
+
+Functional HTTP tests and the shared CI workflow; no separate application copy.
+
+[API tests](../02-development/fastapi-redis/tests/test_main.py) · [GitHub Actions workflow](../../.github/workflows/ci.yml) · [Application](../02-development/fastapi-redis/)
+
 ---
 
-[FastAPI modules](../../tracks/FASTAPI.md) · [← Module 03](../03-linting-typing/FASTAPI.md) · [Module 05 →](../05-deployment/FASTAPI.md)
+[← Module 03](../03-linting-typing/FASTAPI.md) · [All modules](../../tracks/FASTAPI.md) · [Module 05 →](../05-deployment/FASTAPI.md)

@@ -1,6 +1,8 @@
 # 03 · Linting and typing
 
-**FastAPI track**
+**FastAPI track · Module 03/05** · ●●●○○
+
+[All modules](../../tracks/FASTAPI.md) · [Solution ↓](#solution)
 
 Improve the application from module 02 without creating a new copy.
 
@@ -38,6 +40,12 @@ pre-commit run --all-files
 
 See [.pre-commit-config.yaml](../../.pre-commit-config.yaml). If formatting changes files, review them and rerun the hooks. Expected: no lint or type errors and passing hooks.
 
+## Solution
+
+The module 02 application, with its shared quality configuration.
+
+[Application source](../02-development/fastapi-redis/main.py) · [Quality rules](../../pyproject.toml) · [Development requirements](../../requirements-dev.txt) · [Pre-commit](../../.pre-commit-config.yaml)
+
 ---
 
-[FastAPI modules](../../tracks/FASTAPI.md) · [← Module 02](../02-development/FASTAPI.md) · [Module 04 →](../04-cicd/FASTAPI.md)
+[← Module 02](../02-development/FASTAPI.md) · [All modules](../../tracks/FASTAPI.md) · [Module 04 →](../04-cicd/FASTAPI.md)
