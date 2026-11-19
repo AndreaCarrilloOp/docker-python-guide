@@ -1,31 +1,21 @@
-# Module 05 — Test your deployment · FastAPI
+# 05 · Test your deployment
 
-[Learning path](../../README.md) · [Previous lesson](../../modules/04-cicd/FASTAPI.md)
+**FastAPI track**
 
-## What you'll learn
+Deploy the same FastAPI application and Redis to local Kubernetes.
 
-Deploy the existing container to local Kubernetes and validate it.
+## 1. Prepare Kubernetes
 
-## Prerequisites
-
-Complete the previous lesson in this track. Docker Desktop Kubernetes, kubectl and Bash (WSL is acceptable with Docker Desktop integration).
-
-## What's new
-
-Kubernetes manifests and track-selective local deployment scripts.
-
-## Step 1 — Prepare local Kubernetes
-
-Enable Kubernetes in Docker Desktop. Check the context and nodes. Stop the Compose lab first to release port 8000.
+Enable Kubernetes in Docker Desktop. Stop the Compose lab before reusing port 8000.
 
 ```bash
 kubectl config current-context
 kubectl get nodes
 ```
 
-Expected: docker-desktop context and a Ready node. The cluster needs local image access.
+Expected: `docker-desktop` and a Ready node. The cluster must access local Docker images.
 
-## Step 2 — Build and deploy the same API
+## 2. Deploy
 
 From the repository root:
 
@@ -34,9 +24,11 @@ cd modules/05-deployment
 bash scripts/deploy.sh fastapi
 ```
 
-The script builds the image directly from module 02, creates the namespace, applies Redis resources, waits for readiness, deploys FastAPI, and waits for rollout. It does not deploy PostgreSQL or require a PostgreSQL password. Read [redis.yaml](k8s/redis.yaml) and [fastapi.yaml](k8s/fastapi.yaml) to understand the Service, Deployment and probes.
+The [script](scripts/deploy.sh) builds module 02, applies the namespace, deploys Redis, waits for readiness and deploys FastAPI.
 
-## Step 3 — Verify deployment
+Review [redis.yaml](k8s/redis.yaml) and [fastapi.yaml](k8s/fastapi.yaml) for Services, Deployments and health probes.
+
+## 3. Verify
 
 ```bash
 kubectl -n python-guide get pods,svc
@@ -44,20 +36,20 @@ kubectl -n python-guide rollout status deployment/fastapi
 kubectl -n python-guide port-forward svc/fastapi 8000:8000
 ```
 
-In a separate terminal, check http://localhost:8000/health and repeat the module 04 tests against this endpoint. Expected: Ready pods, successful rollout and HTTP 200. Inspect failures using kubectl -n python-guide logs deployment/fastapi and kubectl -n python-guide describe deployment/fastapi.
+In a second terminal, open http://localhost:8000/health. Repeat your module 04 HTTP tests against this endpoint. Expected: Ready pods, successful rollout and HTTP 200.
 
-## Step 4 — Cleanup
+If needed, inspect `kubectl -n python-guide logs deployment/fastapi` and `kubectl -n python-guide describe deployment/fastapi`.
 
-Stop port-forward, then run ```bash
+## 4. Clean up
+
+Stop port-forward, then run:
+
+```bash
 bash scripts/cleanup.sh fastapi
-``` Confirm DELETE only when ready to remove this track's lab resources. The other route remains untouched.
+```
 
-## Troubleshooting
+Confirm DELETE only to remove this track's resources. This completes the FastAPI track.
 
-If a pod is Pending or cannot start, inspect events, image availability, storage and dependency readiness.
+---
 
-## Key takeaway
-
-Kubernetes manages containers and exposes them through Services.
-
-[Learning path](../../README.md) · [Previous lesson](../../modules/04-cicd/FASTAPI.md)
+[Course home](../../README.md) · [← Module 04](../04-cicd/FASTAPI.md) · Course complete

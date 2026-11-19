@@ -1,51 +1,38 @@
-# Module 04 — CI/CD with GitHub Actions · FastAPI
+# 04 · CI/CD with GitHub Actions
 
-[Learning path](../../README.md) · [Previous lesson](../../modules/03-linting-typing/FASTAPI.md) · [Next lesson →](../../modules/05-deployment/FASTAPI.md)
+**FastAPI track**
 
-## What you'll learn
+Automate functional tests and container verification for the same application.
 
-Test and automate the containerized API without duplicating code.
-
-## Prerequisites
-
-Complete the previous lesson in this track. 
-
-## What's new
-
-HTTP lifecycle tests and the repository-level workflow.
-
-## Step 1 — Start the existing API
+## 1. Run the API and tests
 
 ```bash
 cd modules/02-development/fastapi-redis
 docker compose up --build -d --wait
 ```
 
-## Step 2 — Test real HTTP requests
+Activate the [environment from module 03](../../docs/lab-setup.md#python-environment).
 
-The tests in the [tests directory](../../modules/02-development/fastapi-redis/tests) use Python's standard HTTP client and Pytest against the running API. They verify status codes and the user create/read/delete lifecycle; no simulated database is required.
+Read the [HTTP tests](../02-development/fastapi-redis/tests). They exercise the live API and Redis, not a simulated database.
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt -r ../../../requirements-dev.txt
 python -m pytest tests -q
 ```
 
-Expected: health and lifecycle tests pass. Clean up with docker compose down.
+Expected: health and user lifecycle tests pass.
 
-## Step 3 — Automate the workflow
+## 2. Understand the pipeline
 
-Read [ci.yml](../../.github/workflows/ci.yml). A matrix selects each existing example. On push or pull request, the runner installs dependencies, runs Ruff and Pyright, builds the image, starts services, checks HTTP, runs Pytest and cleans up. Kubernetes manifest checks run separately.
+Open [ci.yml](../../.github/workflows/ci.yml). The matrix runs each example separately on GitHub Actions.
 
-Open the repository Actions tab and review the job for FastAPI. A successful workflow demonstrates integration and build verification; deployment is the next lesson, not an automatic cloud release.
+```text
+Install → Lint & type check → Build & run → HTTP tests → Cleanup
+```
 
-## Troubleshooting
+Review the job for FastAPI in [Actions](https://github.com/AndreaCarrilloOp/docker-python-guide/actions). CI validates the build; it does not publish to a cloud environment.
 
-If tests cannot connect, verify the health endpoint first. Review the failed Actions step and container logs.
+Stop Compose using [cleanup instructions](../../docs/lab-setup.md#compose).
 
-## Key takeaway
+---
 
-CI repeats the same checks automatically.
-
-[Learning path](../../README.md) · [Previous lesson](../../modules/03-linting-typing/FASTAPI.md) · [Next lesson →](../../modules/05-deployment/FASTAPI.md)
+[Course home](../../README.md) · [← Module 03](../03-linting-typing/FASTAPI.md) · [Module 05 →](../05-deployment/FASTAPI.md)
