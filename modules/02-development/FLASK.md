@@ -1,20 +1,20 @@
 # 02 · Development
 
-**Flask track · Module 02/05** · ●●○○○
+**Flask · 2 of 5**
 
-[All modules](../../tracks/FLASK.md) · [Solution ↓](#solution)
+[← Flask modules](../../tracks/FLASK.md) · [Solution](#solution)
 
 Extend the basic application with PostgreSQL using Docker Compose.
 
 ## 1. Extend the application
 
-Review [app.py](flask-postgres/app.py) and [requirements.txt](flask-postgres/requirements.txt).
+Review `app.py` and `requirements.txt`.
 
 The application factory configures SQLAlchemy, defines a Task model and exposes CRUD routes. The schema is initialized with create_all; connection settings come from environment variables.
 
 ## 2. Connect the services
 
-Read [compose.yaml](flask-postgres/compose.yaml). The API uses internal DNS (`db`), waits for the dependency health check and uses a named volume for data.
+Read `compose.yaml`. The API uses internal DNS (`db`), waits for the dependency health check and uses a named volume for data.
 
 ```bash
 cd modules/02-development/flask-postgres
@@ -35,7 +35,7 @@ curl -X POST http://localhost:5000/tasks -H 'Content-Type: application/json' -d 
 curl http://localhost:5000/tasks
 ```
 
-Expected: HTTP 200 for health, 201 for creation and a JSON list containing the new record. Use its returned ID to retrieve or delete it. Try PUT /tasks/{id} to update it. The optional [seed SQL](flask-postgres/init.sql) applies after schema creation.
+Expected: HTTP 200 for health, 201 for creation and a JSON list containing the new record. Use its returned ID to retrieve or delete it. Try PUT /tasks/{id} to update it. The optional `seed SQL` applies after schema creation.
 
 <details>
 <summary>Optional · Adminer</summary>
@@ -52,12 +52,14 @@ Stop the lab following [Compose cleanup](../../docs/lab-setup.md#compose) before
 
 ## Solution
 
-Complete service-backed application, extended from module 01.
-
-[Project files](flask-postgres/) · [app.py](flask-postgres/app.py) · [Compose](flask-postgres/compose.yaml) · [Dockerfile](flask-postgres/Dockerfile) · [Requirements](flask-postgres/requirements.txt)
-
-[Environment template](flask-postgres/.env.example) · [Optional seed SQL](flask-postgres/init.sql)
+- [Project files](flask-postgres/)
+- [app.py](flask-postgres/app.py)
+- [Compose](flask-postgres/compose.yaml)
+- [Dockerfile](flask-postgres/Dockerfile)
+- [Requirements](flask-postgres/requirements.txt)
+- [Environment template](flask-postgres/.env.example)
+- [Optional seed SQL](flask-postgres/init.sql)
 
 ---
 
-[← Module 01](../01-containerization/FLASK.md) · [All modules](../../tracks/FLASK.md) · [Module 03 →](../03-linting-typing/FLASK.md)
+[← Module 01](../01-containerization/FLASK.md) · [Module 03 →](../03-linting-typing/FLASK.md)

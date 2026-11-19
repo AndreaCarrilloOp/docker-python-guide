@@ -1,8 +1,8 @@
 # 04 · CI/CD with GitHub Actions
 
-**Flask track · Module 04/05** · ●●●●○
+**Flask · 4 of 5**
 
-[All modules](../../tracks/FLASK.md) · [Solution ↓](#solution)
+[← Flask modules](../../tracks/FLASK.md) · [Solution](#solution)
 
 Automate functional tests and container verification for the same application.
 
@@ -15,7 +15,7 @@ docker compose up --build -d --wait
 
 Reuse your local .env from module 02. Activate the [environment from module 03](../../docs/lab-setup.md#python-environment).
 
-Read the [HTTP tests](../02-development/flask-postgres/tests). They exercise the live API and PostgreSQL, not a simulated database.
+Read the HTTP tests. They exercise the live API and PostgreSQL, not a simulated database.
 
 ```bash
 python -m pytest tests -q
@@ -25,7 +25,7 @@ Expected: health and task CRUD tests pass.
 
 ## 2. Understand the pipeline
 
-Open [ci.yml](../../.github/workflows/ci.yml). The matrix runs each example separately on GitHub Actions.
+Open `ci.yml`. The matrix runs each example separately on GitHub Actions.
 
 ```text
 Install → Lint & type check → Build & run → HTTP tests → Cleanup
@@ -37,10 +37,10 @@ Stop Compose using [cleanup instructions](../../docs/lab-setup.md#compose).
 
 ## Solution
 
-Functional HTTP tests and the shared CI workflow; no separate application copy.
-
-[API tests](../02-development/flask-postgres/tests/test_app.py) · [GitHub Actions workflow](../../.github/workflows/ci.yml) · [Application](../02-development/flask-postgres/)
+- [API tests](../02-development/flask-postgres/tests/test_app.py)
+- [GitHub Actions workflow](../../.github/workflows/ci.yml)
+- [Application](../02-development/flask-postgres/)
 
 ---
 
-[← Module 03](../03-linting-typing/FLASK.md) · [All modules](../../tracks/FLASK.md) · [Module 05 →](../05-deployment/FLASK.md)
+[← Module 03](../03-linting-typing/FLASK.md) · [Module 05 →](../05-deployment/FLASK.md)

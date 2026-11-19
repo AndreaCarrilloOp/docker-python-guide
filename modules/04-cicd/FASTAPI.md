@@ -1,8 +1,8 @@
 # 04 · CI/CD with GitHub Actions
 
-**FastAPI track · Module 04/05** · ●●●●○
+**FastAPI · 4 of 5**
 
-[All modules](../../tracks/FASTAPI.md) · [Solution ↓](#solution)
+[← FastAPI modules](../../tracks/FASTAPI.md) · [Solution](#solution)
 
 Automate functional tests and container verification for the same application.
 
@@ -15,7 +15,7 @@ docker compose up --build -d --wait
 
 Activate the [environment from module 03](../../docs/lab-setup.md#python-environment).
 
-Read the [HTTP tests](../02-development/fastapi-redis/tests). They exercise the live API and Redis, not a simulated database.
+Read the HTTP tests. They exercise the live API and Redis, not a simulated database.
 
 ```bash
 python -m pytest tests -q
@@ -25,7 +25,7 @@ Expected: health and user lifecycle tests pass.
 
 ## 2. Understand the pipeline
 
-Open [ci.yml](../../.github/workflows/ci.yml). The matrix runs each example separately on GitHub Actions.
+Open `ci.yml`. The matrix runs each example separately on GitHub Actions.
 
 ```text
 Install → Lint & type check → Build & run → HTTP tests → Cleanup
@@ -37,10 +37,10 @@ Stop Compose using [cleanup instructions](../../docs/lab-setup.md#compose).
 
 ## Solution
 
-Functional HTTP tests and the shared CI workflow; no separate application copy.
-
-[API tests](../02-development/fastapi-redis/tests/test_main.py) · [GitHub Actions workflow](../../.github/workflows/ci.yml) · [Application](../02-development/fastapi-redis/)
+- [API tests](../02-development/fastapi-redis/tests/test_main.py)
+- [GitHub Actions workflow](../../.github/workflows/ci.yml)
+- [Application](../02-development/fastapi-redis/)
 
 ---
 
-[← Module 03](../03-linting-typing/FASTAPI.md) · [All modules](../../tracks/FASTAPI.md) · [Module 05 →](../05-deployment/FASTAPI.md)
+[← Module 03](../03-linting-typing/FASTAPI.md) · [Module 05 →](../05-deployment/FASTAPI.md)

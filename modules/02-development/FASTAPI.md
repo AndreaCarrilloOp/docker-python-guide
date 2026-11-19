@@ -1,20 +1,20 @@
 # 02 · Development
 
-**FastAPI track · Module 02/05** · ●●○○○
+**FastAPI · 2 of 5**
 
-[All modules](../../tracks/FASTAPI.md) · [Solution ↓](#solution)
+[← FastAPI modules](../../tracks/FASTAPI.md) · [Solution](#solution)
 
 Extend the basic application with Redis using Docker Compose.
 
 ## 1. Extend the application
 
-Review [main.py](fastapi-redis/main.py) and [requirements.txt](fastapi-redis/requirements.txt).
+Review `main.py` and `requirements.txt`.
 
 Pydantic defines user request/response models. Redis stores records under user:* keys, assigns incrementing IDs and expires records after one hour. Synchronous routes run in FastAPI's worker threads.
 
 ## 2. Connect the services
 
-Read [compose.yaml](fastapi-redis/compose.yaml). The API uses internal DNS (`redis`), waits for the dependency health check and uses a named volume for data.
+Read `compose.yaml`. The API uses internal DNS (`redis`), waits for the dependency health check and uses a named volume for data.
 
 ```bash
 cd modules/02-development/fastapi-redis
@@ -49,12 +49,13 @@ Stop the lab following [Compose cleanup](../../docs/lab-setup.md#compose) before
 
 ## Solution
 
-Complete service-backed application, extended from module 01.
-
-[Project files](fastapi-redis/) · [main.py](fastapi-redis/main.py) · [Compose](fastapi-redis/compose.yaml) · [Dockerfile](fastapi-redis/Dockerfile) · [Requirements](fastapi-redis/requirements.txt)
-
-[.dockerignore](fastapi-redis/.dockerignore)
+- [Project files](fastapi-redis/)
+- [main.py](fastapi-redis/main.py)
+- [Compose](fastapi-redis/compose.yaml)
+- [Dockerfile](fastapi-redis/Dockerfile)
+- [Requirements](fastapi-redis/requirements.txt)
+- [.dockerignore](fastapi-redis/.dockerignore)
 
 ---
 
-[← Module 01](../01-containerization/FASTAPI.md) · [All modules](../../tracks/FASTAPI.md) · [Module 03 →](../03-linting-typing/FASTAPI.md)
+[← Module 01](../01-containerization/FASTAPI.md) · [Module 03 →](../03-linting-typing/FASTAPI.md)

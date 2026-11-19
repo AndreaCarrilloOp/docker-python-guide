@@ -4,7 +4,6 @@ Build, develop, test and deploy a Flask application with PostgreSQL and Docker.
 
 [← Choose your path](../README.md) · [Lab setup](../docs/lab-setup.md)
 
-## Modules
 
 | Module | Tutorial | Solution |
 | :--- | :---: | :---: |
@@ -13,5 +12,3 @@ Build, develop, test and deploy a Flask application with PostgreSQL and Docker.
 | 03 · Linting and typing | [Read](../modules/03-linting-typing/FLASK.md) | [View](../modules/03-linting-typing/FLASK.md#solution) |
 | 04 · CI/CD with GitHub Actions | [Read](../modules/04-cicd/FLASK.md) | [View](../modules/04-cicd/FLASK.md#solution) |
 | 05 · Test your deployment | [Read](../modules/05-deployment/FLASK.md) | [View](../modules/05-deployment/FLASK.md#solution) |
-
-[**Start module 01 →**](../modules/01-containerization/FLASK.md)

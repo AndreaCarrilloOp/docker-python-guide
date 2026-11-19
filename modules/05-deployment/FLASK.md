@@ -1,8 +1,8 @@
 # 05 · Test your deployment
 
-**Flask track · Module 05/05** · ●●●●●
+**Flask · 5 of 5**
 
-[All modules](../../tracks/FLASK.md) · [Solution ↓](#solution)
+[← Flask modules](../../tracks/FLASK.md) · [Solution](#solution)
 
 Deploy the same Flask application and PostgreSQL to local Kubernetes.
 
@@ -26,9 +26,9 @@ cd modules/05-deployment
 bash scripts/deploy.sh flask
 ```
 
-The [script](scripts/deploy.sh) builds module 02, applies the namespace, deploys PostgreSQL, waits for readiness and deploys Flask. Enter a local password when prompted; the script creates the Kubernetes Secret outside Git.
+The `script` builds module 02, applies the namespace, deploys PostgreSQL, waits for readiness and deploys Flask. Enter a local password when prompted; the script creates the Kubernetes Secret outside Git.
 
-Review [postgres.yaml](k8s/postgres.yaml) and [flask.yaml](k8s/flask.yaml) for Services, Deployments and health probes.
+Review `postgres.yaml` and `flask.yaml` for Services, Deployments and health probes.
 
 ## 3. Verify
 
@@ -54,12 +54,13 @@ Confirm DELETE only to remove this track's resources, including its database vol
 
 ## Solution
 
-Local Kubernetes deployment of the module 02 application.
-
-[Namespace](k8s/namespace.yaml) · [PostgreSQL resources](k8s/postgres.yaml) · [Flask resources](k8s/flask.yaml)
-
-[Deploy script](scripts/deploy.sh) · [Cleanup script](scripts/cleanup.sh) · [Application](../02-development/flask-postgres/)
+- [Namespace](k8s/namespace.yaml)
+- [PostgreSQL resources](k8s/postgres.yaml)
+- [Flask resources](k8s/flask.yaml)
+- [Deploy script](scripts/deploy.sh)
+- [Cleanup script](scripts/cleanup.sh)
+- [Application](../02-development/flask-postgres/)
 
 ---
 
-[← Module 04](../04-cicd/FLASK.md) · [Course complete · Back to track](../../tracks/FLASK.md)
+[← Module 04](../04-cicd/FLASK.md) · [Finish track →](../../tracks/FLASK.md)

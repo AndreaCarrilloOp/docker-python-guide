@@ -1,18 +1,18 @@
 # 01 · Containerization
 
-**Flask track · Module 01/05** · ●○○○○
+**Flask · 1 of 5**
 
-[All modules](../../tracks/FLASK.md) · [Solution ↓](#solution)
+[← Flask modules](../../tracks/FLASK.md) · [Solution](#solution)
 
 Package a minimal HTTP application into a Docker image.
 
 ## 1. Create the application
 
-Open [app.py](flask-basic/app.py) and [requirements.txt](flask-basic/requirements.txt). Create the framework instance, a root route and a separate `GET /health` route returning `{"status":"healthy"}`.
+Open `app.py` and `requirements.txt`. Create the framework instance, a root route and a separate `GET /health` route returning `{"status":"healthy"}`.
 
 ## 2. Build the image
 
-Read the [Dockerfile](flask-basic/Dockerfile) and [.dockerignore](flask-basic/.dockerignore). The [Dockerfile reference](../../docs/dockerfile.md) explains each instruction, caching and the non-root user.
+Read the `Dockerfile` and `.dockerignore`. The [Dockerfile reference](../../docs/dockerfile.md) explains each instruction, caching and the non-root user.
 
 From the repository root:
 
@@ -36,10 +36,12 @@ Stop the container with Ctrl+C before continuing. [Troubleshooting](../../docs/l
 
 ## Solution
 
-Complete standalone container example.
-
-[Project files](flask-basic/) · [app.py](flask-basic/app.py) · [Dockerfile](flask-basic/Dockerfile) · [Requirements](flask-basic/requirements.txt) · [.dockerignore](flask-basic/.dockerignore)
+- [Project files](flask-basic/)
+- [app.py](flask-basic/app.py)
+- [Dockerfile](flask-basic/Dockerfile)
+- [Requirements](flask-basic/requirements.txt)
+- [.dockerignore](flask-basic/.dockerignore)
 
 ---
 
-[All modules](../../tracks/FLASK.md) · [Module 02 →](../02-development/FLASK.md)
+[Module 02 →](../02-development/FLASK.md)

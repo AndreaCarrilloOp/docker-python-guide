@@ -4,7 +4,6 @@ Build, develop, test and deploy a FastAPI application with Redis and Docker.
 
 [← Choose your path](../README.md) · [Lab setup](../docs/lab-setup.md)
 
-## Modules
 
 | Module | Tutorial | Solution |
 | :--- | :---: | :---: |
@@ -13,5 +12,3 @@ Build, develop, test and deploy a FastAPI application with Redis and Docker.
 | 03 · Linting and typing | [Read](../modules/03-linting-typing/FASTAPI.md) | [View](../modules/03-linting-typing/FASTAPI.md#solution) |
 | 04 · CI/CD with GitHub Actions | [Read](../modules/04-cicd/FASTAPI.md) | [View](../modules/04-cicd/FASTAPI.md#solution) |
 | 05 · Test your deployment | [Read](../modules/05-deployment/FASTAPI.md) | [View](../modules/05-deployment/FASTAPI.md#solution) |
-
-[**Start module 01 →**](../modules/01-containerization/FASTAPI.md)

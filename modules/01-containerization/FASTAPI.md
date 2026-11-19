@@ -1,18 +1,18 @@
 # 01 · Containerization
 
-**FastAPI track · Module 01/05** · ●○○○○
+**FastAPI · 1 of 5**
 
-[All modules](../../tracks/FASTAPI.md) · [Solution ↓](#solution)
+[← FastAPI modules](../../tracks/FASTAPI.md) · [Solution](#solution)
 
 Package a minimal HTTP application into a Docker image.
 
 ## 1. Create the application
 
-Open [main.py](fastapi-basic/main.py) and [requirements.txt](fastapi-basic/requirements.txt). Create the framework instance, a root route and a separate `GET /health` route returning `{"status":"healthy"}`.
+Open `main.py` and `requirements.txt`. Create the framework instance, a root route and a separate `GET /health` route returning `{"status":"healthy"}`.
 
 ## 2. Build the image
 
-Read the [Dockerfile](fastapi-basic/Dockerfile) and [.dockerignore](fastapi-basic/.dockerignore). The [Dockerfile reference](../../docs/dockerfile.md) explains each instruction, caching and the non-root user.
+Read the `Dockerfile` and `.dockerignore`. The [Dockerfile reference](../../docs/dockerfile.md) explains each instruction, caching and the non-root user.
 
 From the repository root:
 
@@ -36,10 +36,12 @@ Stop the container with Ctrl+C before continuing. [Troubleshooting](../../docs/l
 
 ## Solution
 
-Complete standalone container example.
-
-[Project files](fastapi-basic/) · [main.py](fastapi-basic/main.py) · [Dockerfile](fastapi-basic/Dockerfile) · [Requirements](fastapi-basic/requirements.txt) · [.dockerignore](fastapi-basic/.dockerignore)
+- [Project files](fastapi-basic/)
+- [main.py](fastapi-basic/main.py)
+- [Dockerfile](fastapi-basic/Dockerfile)
+- [Requirements](fastapi-basic/requirements.txt)
+- [.dockerignore](fastapi-basic/.dockerignore)
 
 ---
 
-[All modules](../../tracks/FASTAPI.md) · [Module 02 →](../02-development/FASTAPI.md)
+[Module 02 →](../02-development/FASTAPI.md)

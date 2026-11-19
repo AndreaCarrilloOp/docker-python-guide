@@ -1,8 +1,8 @@
 # 03 · Linting and typing
 
-**Flask track · Module 03/05** · ●●●○○
+**Flask · 3 of 5**
 
-[All modules](../../tracks/FLASK.md) · [Solution ↓](#solution)
+[← Flask modules](../../tracks/FLASK.md) · [Solution](#solution)
 
 Improve the application from module 02 without creating a new copy.
 
@@ -12,7 +12,7 @@ Improve the application from module 02 without creating a new copy.
 cd modules/02-development/flask-postgres
 ```
 
-Follow [Python environment setup](../../docs/lab-setup.md#python-environment) from this directory. The shared [pyproject.toml](../../pyproject.toml) defines linting and type-checking rules.
+Follow [Python environment setup](../../docs/lab-setup.md#python-environment) from this directory. The shared `pyproject.toml` defines linting and type-checking rules.
 
 ## 2. Check and format
 
@@ -24,7 +24,7 @@ python -m ruff check .
 python -m pyright .
 ```
 
-In [app.py](../02-development/flask-postgres/app.py), inspect the typed Task fields, explicit constructor and SQLAlchemyError handling.
+In `app.py`, inspect the typed Task fields, explicit constructor and SQLAlchemyError handling.
 
 `--fix` and `format` modify local source; review the resulting diff.
 
@@ -38,14 +38,15 @@ pre-commit install
 pre-commit run --all-files
 ```
 
-See [.pre-commit-config.yaml](../../.pre-commit-config.yaml). If formatting changes files, review them and rerun the hooks. Expected: no lint or type errors and passing hooks.
+See `.pre-commit-config.yaml`. If formatting changes files, review them and rerun the hooks. Expected: no lint or type errors and passing hooks.
 
 ## Solution
 
-The module 02 application, with its shared quality configuration.
-
-[Application source](../02-development/flask-postgres/app.py) · [Quality rules](../../pyproject.toml) · [Development requirements](../../requirements-dev.txt) · [Pre-commit](../../.pre-commit-config.yaml)
+- [Application source](../02-development/flask-postgres/app.py)
+- [Quality rules](../../pyproject.toml)
+- [Development requirements](../../requirements-dev.txt)
+- [Pre-commit](../../.pre-commit-config.yaml)
 
 ---
 
-[← Module 02](../02-development/FLASK.md) · [All modules](../../tracks/FLASK.md) · [Module 04 →](../04-cicd/FLASK.md)
+[← Module 02](../02-development/FLASK.md) · [Module 04 →](../04-cicd/FLASK.md)
