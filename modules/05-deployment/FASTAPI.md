@@ -1,8 +1,6 @@
 # 05 · Test your deployment
 
-**FastAPI · 5 of 5**
-
-[← FastAPI modules](../../tracks/FASTAPI.md) · [Solution](#solution)
+[← FastAPI track](../../tracks/FASTAPI.md) · 5/5
 
 Deploy the same FastAPI application and Redis to local Kubernetes.
 
@@ -54,13 +52,10 @@ Confirm DELETE only to remove this track's resources. This completes the FastAPI
 
 ## Solution
 
-- [Namespace](k8s/namespace.yaml)
-- [Redis resources](k8s/redis.yaml)
-- [FastAPI resources](k8s/fastapi.yaml)
-- [Deploy script](scripts/deploy.sh)
-- [Cleanup script](scripts/cleanup.sh)
-- [Application](../02-development/fastapi-redis/)
+[`namespace.yaml`](k8s/namespace.yaml) · [`redis.yaml`](k8s/redis.yaml) · [`fastapi.yaml`](k8s/fastapi.yaml)
+
+[`deploy.sh`](scripts/deploy.sh) · [`cleanup.sh`](scripts/cleanup.sh)
 
 ---
 
-[← Module 04](../04-cicd/FASTAPI.md) · [Finish track →](../../tracks/FASTAPI.md)
+[← CI/CD with GitHub Actions](../04-cicd/FASTAPI.md) · [Finish track →](../../tracks/FASTAPI.md)

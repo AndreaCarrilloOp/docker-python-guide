@@ -1,8 +1,6 @@
 # 02 · Development
 
-**FastAPI · 2 of 5**
-
-[← FastAPI modules](../../tracks/FASTAPI.md) · [Solution](#solution)
+[← FastAPI track](../../tracks/FASTAPI.md) · 2/5
 
 Extend the basic application with Redis using Docker Compose.
 
@@ -18,8 +16,6 @@ Read `compose.yaml`. The API uses internal DNS (`redis`), waits for the dependen
 
 ```bash
 cd modules/02-development/fastapi-redis
-```
-```bash
 docker compose up --build -d --wait
 docker compose ps
 ```
@@ -49,13 +45,10 @@ Stop the lab following [Compose cleanup](../../docs/lab-setup.md#compose) before
 
 ## Solution
 
-- [Project files](fastapi-redis/)
-- [main.py](fastapi-redis/main.py)
-- [Compose](fastapi-redis/compose.yaml)
-- [Dockerfile](fastapi-redis/Dockerfile)
-- [Requirements](fastapi-redis/requirements.txt)
-- [.dockerignore](fastapi-redis/.dockerignore)
+[`main.py`](fastapi-redis/main.py) · [`compose.yaml`](fastapi-redis/compose.yaml) · [`Dockerfile`](fastapi-redis/Dockerfile)
+
+[`requirements.txt`](fastapi-redis/requirements.txt) · [`.dockerignore`](fastapi-redis/.dockerignore)
 
 ---
 
-[← Module 01](../01-containerization/FASTAPI.md) · [Module 03 →](../03-linting-typing/FASTAPI.md)
+[← Containerization](../01-containerization/FASTAPI.md) · [Linting and typing →](../03-linting-typing/FASTAPI.md)

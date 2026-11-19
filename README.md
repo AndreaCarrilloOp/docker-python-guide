@@ -16,4 +16,4 @@ Learn to containerize, develop, test and deploy Python applications with Docker 
 
 ---
 
-[Lab setup](docs/lab-setup.md) · [Dockerfile reference](docs/dockerfile.md) · [Security](docs/security.md) · [History](docs/migration-history.md) · [Contributing](CONTRIBUTING.md) · [MIT](LICENSE)
+[Lab setup & course resources](docs/lab-setup.md)

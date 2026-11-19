@@ -1,8 +1,6 @@
 # 05 · Test your deployment
 
-**Flask · 5 of 5**
-
-[← Flask modules](../../tracks/FLASK.md) · [Solution](#solution)
+[← Flask track](../../tracks/FLASK.md) · 5/5
 
 Deploy the same Flask application and PostgreSQL to local Kubernetes.
 
@@ -54,13 +52,10 @@ Confirm DELETE only to remove this track's resources, including its database vol
 
 ## Solution
 
-- [Namespace](k8s/namespace.yaml)
-- [PostgreSQL resources](k8s/postgres.yaml)
-- [Flask resources](k8s/flask.yaml)
-- [Deploy script](scripts/deploy.sh)
-- [Cleanup script](scripts/cleanup.sh)
-- [Application](../02-development/flask-postgres/)
+[`namespace.yaml`](k8s/namespace.yaml) · [`postgres.yaml`](k8s/postgres.yaml) · [`flask.yaml`](k8s/flask.yaml)
+
+[`deploy.sh`](scripts/deploy.sh) · [`cleanup.sh`](scripts/cleanup.sh)
 
 ---
 
-[← Module 04](../04-cicd/FLASK.md) · [Finish track →](../../tracks/FLASK.md)
+[← CI/CD with GitHub Actions](../04-cicd/FLASK.md) · [Finish track →](../../tracks/FLASK.md)

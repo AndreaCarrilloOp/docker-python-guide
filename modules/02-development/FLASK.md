@@ -1,8 +1,6 @@
 # 02 · Development
 
-**Flask · 2 of 5**
-
-[← Flask modules](../../tracks/FLASK.md) · [Solution](#solution)
+[← Flask track](../../tracks/FLASK.md) · 2/5
 
 Extend the basic application with PostgreSQL using Docker Compose.
 
@@ -52,14 +50,10 @@ Stop the lab following [Compose cleanup](../../docs/lab-setup.md#compose) before
 
 ## Solution
 
-- [Project files](flask-postgres/)
-- [app.py](flask-postgres/app.py)
-- [Compose](flask-postgres/compose.yaml)
-- [Dockerfile](flask-postgres/Dockerfile)
-- [Requirements](flask-postgres/requirements.txt)
-- [Environment template](flask-postgres/.env.example)
-- [Optional seed SQL](flask-postgres/init.sql)
+[`app.py`](flask-postgres/app.py) · [`compose.yaml`](flask-postgres/compose.yaml) · [`Dockerfile`](flask-postgres/Dockerfile)
+
+[`requirements.txt`](flask-postgres/requirements.txt) · [`.env.example`](flask-postgres/.env.example) · [`init.sql`](flask-postgres/init.sql) · [`.dockerignore`](flask-postgres/.dockerignore)
 
 ---
 
-[← Module 01](../01-containerization/FLASK.md) · [Module 03 →](../03-linting-typing/FLASK.md)
+[← Containerization](../01-containerization/FLASK.md) · [Linting and typing →](../03-linting-typing/FLASK.md)

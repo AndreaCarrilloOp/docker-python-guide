@@ -1,8 +1,6 @@
 # 03 · Linting and typing
 
-**Flask · 3 of 5**
-
-[← Flask modules](../../tracks/FLASK.md) · [Solution](#solution)
+[← Flask track](../../tracks/FLASK.md) · 3/5
 
 Improve the application from module 02 without creating a new copy.
 
@@ -15,6 +13,8 @@ cd modules/02-development/flask-postgres
 Follow [Python environment setup](../../docs/lab-setup.md#python-environment) from this directory. The shared `pyproject.toml` defines linting and type-checking rules.
 
 ## 2. Check and format
+
+Compare the initial lint results with the final check after applying fixes.
 
 ```bash
 python -m ruff check .
@@ -42,11 +42,8 @@ See `.pre-commit-config.yaml`. If formatting changes files, review them and reru
 
 ## Solution
 
-- [Application source](../02-development/flask-postgres/app.py)
-- [Quality rules](../../pyproject.toml)
-- [Development requirements](../../requirements-dev.txt)
-- [Pre-commit](../../.pre-commit-config.yaml)
+[`app.py`](../02-development/flask-postgres/app.py) · [`pyproject.toml`](../../pyproject.toml) · [`requirements-dev.txt`](../../requirements-dev.txt) · [`.pre-commit-config.yaml`](../../.pre-commit-config.yaml)
 
 ---
 
-[← Module 02](../02-development/FLASK.md) · [Module 04 →](../04-cicd/FLASK.md)
+[← Development](../02-development/FLASK.md) · [CI/CD with GitHub Actions →](../04-cicd/FLASK.md)

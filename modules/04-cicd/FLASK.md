@@ -1,8 +1,6 @@
 # 04 · CI/CD with GitHub Actions
 
-**Flask · 4 of 5**
-
-[← Flask modules](../../tracks/FLASK.md) · [Solution](#solution)
+[← Flask track](../../tracks/FLASK.md) · 4/5
 
 Automate functional tests and container verification for the same application.
 
@@ -37,10 +35,8 @@ Stop Compose using [cleanup instructions](../../docs/lab-setup.md#compose).
 
 ## Solution
 
-- [API tests](../02-development/flask-postgres/tests/test_app.py)
-- [GitHub Actions workflow](../../.github/workflows/ci.yml)
-- [Application](../02-development/flask-postgres/)
+[`test_app.py`](../02-development/flask-postgres/tests/test_app.py) · [`ci.yml`](../../.github/workflows/ci.yml)
 
 ---
 
-[← Module 03](../03-linting-typing/FLASK.md) · [Module 05 →](../05-deployment/FLASK.md)
+[← Linting and typing](../03-linting-typing/FLASK.md) · [Test your deployment →](../05-deployment/FLASK.md)

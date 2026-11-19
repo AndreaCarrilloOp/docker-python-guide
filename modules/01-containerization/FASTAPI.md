@@ -1,8 +1,6 @@
 # 01 · Containerization
 
-**FastAPI · 1 of 5**
-
-[← FastAPI modules](../../tracks/FASTAPI.md) · [Solution](#solution)
+[← FastAPI track](../../tracks/FASTAPI.md) · 1/5
 
 Package a minimal HTTP application into a Docker image.
 
@@ -36,12 +34,8 @@ Stop the container with Ctrl+C before continuing. [Troubleshooting](../../docs/l
 
 ## Solution
 
-- [Project files](fastapi-basic/)
-- [main.py](fastapi-basic/main.py)
-- [Dockerfile](fastapi-basic/Dockerfile)
-- [Requirements](fastapi-basic/requirements.txt)
-- [.dockerignore](fastapi-basic/.dockerignore)
+[`main.py`](fastapi-basic/main.py) · [`Dockerfile`](fastapi-basic/Dockerfile) · [`requirements.txt`](fastapi-basic/requirements.txt) · [`.dockerignore`](fastapi-basic/.dockerignore)
 
 ---
 
-[Module 02 →](../02-development/FASTAPI.md)
+[Development →](../02-development/FASTAPI.md)

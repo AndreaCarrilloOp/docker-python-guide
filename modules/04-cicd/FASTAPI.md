@@ -1,8 +1,6 @@
 # 04 · CI/CD with GitHub Actions
 
-**FastAPI · 4 of 5**
-
-[← FastAPI modules](../../tracks/FASTAPI.md) · [Solution](#solution)
+[← FastAPI track](../../tracks/FASTAPI.md) · 4/5
 
 Automate functional tests and container verification for the same application.
 
@@ -37,10 +35,8 @@ Stop Compose using [cleanup instructions](../../docs/lab-setup.md#compose).
 
 ## Solution
 
-- [API tests](../02-development/fastapi-redis/tests/test_main.py)
-- [GitHub Actions workflow](../../.github/workflows/ci.yml)
-- [Application](../02-development/fastapi-redis/)
+[`test_main.py`](../02-development/fastapi-redis/tests/test_main.py) · [`ci.yml`](../../.github/workflows/ci.yml)
 
 ---
 
-[← Module 03](../03-linting-typing/FASTAPI.md) · [Module 05 →](../05-deployment/FASTAPI.md)
+[← Linting and typing](../03-linting-typing/FASTAPI.md) · [Test your deployment →](../05-deployment/FASTAPI.md)

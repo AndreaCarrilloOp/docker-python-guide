@@ -15,7 +15,7 @@ git clone https://github.com/AndreaCarrilloOp/docker-python-guide.git
 cd docker-python-guide
 ```
 
- Lesson paths are relative to the repository root unless specified. Use Bash (Git Bash or WSL on Windows); in PowerShell use `curl.exe` instead of the `curl` alias, and adapt quoting as needed. Stop a running lab before reusing its port.
+Lesson paths are relative to the repository root unless specified. Use Bash (Git Bash or WSL on Windows); in PowerShell use `curl.exe` instead of the `curl` alias, and adapt quoting as needed. Stop a running lab before reusing its port.
 
 ## Python environment
 
@@ -37,7 +37,7 @@ Reuse this environment in modules 03 and 04. If you reopen a terminal, activate 
 
 ## Compose
 
-From the selected module 02 example, run `docker compose up --build -d --wait`. For Flask, set the local password first as explained in its lesson.
+Follow the selected module 02 tutorial to start services.
 
 Use `docker compose ps` and `docker compose logs` to diagnose startup failures. If you enabled optional tools, stop them with `docker compose --profile tools down`; otherwise use `docker compose down`. Add `-v` only when intentionally deleting lab data. Keep credentials outside Git.
 
@@ -52,4 +52,6 @@ Use `docker compose ps` and `docker compose logs` to diagnose startup failures. 
 | HTTP tests fail | Check that the API and its backing service are running. |
 | Kubernetes pod Pending | Check events, image availability, storage and readiness. |
 
-For credentials and local-only usage, see [security notes](security.md).
+## References
+
+[Dockerfile reference](dockerfile.md) · [Security notes](security.md) · [Migration history](migration-history.md) · [Contributing](../CONTRIBUTING.md) · [MIT license](../LICENSE)

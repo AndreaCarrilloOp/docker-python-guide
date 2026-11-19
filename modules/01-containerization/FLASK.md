@@ -1,8 +1,6 @@
 # 01 · Containerization
 
-**Flask · 1 of 5**
-
-[← Flask modules](../../tracks/FLASK.md) · [Solution](#solution)
+[← Flask track](../../tracks/FLASK.md) · 1/5
 
 Package a minimal HTTP application into a Docker image.
 
@@ -36,12 +34,8 @@ Stop the container with Ctrl+C before continuing. [Troubleshooting](../../docs/l
 
 ## Solution
 
-- [Project files](flask-basic/)
-- [app.py](flask-basic/app.py)
-- [Dockerfile](flask-basic/Dockerfile)
-- [Requirements](flask-basic/requirements.txt)
-- [.dockerignore](flask-basic/.dockerignore)
+[`app.py`](flask-basic/app.py) · [`Dockerfile`](flask-basic/Dockerfile) · [`requirements.txt`](flask-basic/requirements.txt) · [`.dockerignore`](flask-basic/.dockerignore)
 
 ---
 
-[Module 02 →](../02-development/FLASK.md)
+[Development →](../02-development/FLASK.md)
