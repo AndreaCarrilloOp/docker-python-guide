@@ -1,0 +1,78 @@
+name: Python and Docker guide
+on:
+  push:
+    branches: [main, refactor/incremental-guide]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  examples:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {path: modules/01-containerization/flask-basic, port: 5000, compose: false}
+          - {path: modules/01-containerization/fastapi-basic, port: 8000, compose: false}
+          - {path: modules/02-development/flask-postgres, port: 5000, compose: true}
+          - {path: modules/02-development/fastapi-redis, port: 8000, compose: true}
+    defaults:
+      run:
+        working-directory: ${{ matrix.path }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt -r ../../../requirements-dev.txt
+      - name: Lint and type checks
+        run: |
+          python -m ruff check .
+          python -m pyright .
+      - name: Build standalone image
+        if: "!matrix.compose"
+        run: |
+          docker build -t guide-example:ci .
+          docker run -d --name guide-example -p 127.0.0.1:${{ matrix.port }}:${{ matrix.port }} guide-example:ci
+      - name: Start Compose services
+        if: matrix.compose
+        run: |
+          export POSTGRES_PASSWORD="$(openssl rand -hex 24)"
+          docker compose config --quiet
+          docker compose up --build -d --wait --wait-timeout 180
+      - name: Verify HTTP and API lifecycle
+        run: |
+          curl --fail --retry 20 --retry-all-errors --retry-delay 3 http://127.0.0.1:${{ matrix.port }}/health
+          python -m pytest tests -q
+      - name: Cleanup
+        if: always()
+        run: |
+          docker rm -f guide-example 2>/dev/null || true
+          if [ -f compose.yaml ]; then
+            POSTGRES_PASSWORD=unused-cleanup-placeholder docker compose down -v
+          fi
+  manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-kubectl@v4
+      - name: Check shell syntax
+        run: bash -n modules/05-deployment/scripts/deploy.sh && bash -n modules/05-deployment/scripts/cleanup.sh
+      - name: Parse manifests and check resource structure
+        run: |
+          python -m pip install PyYAML
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+          paths = sorted(Path("modules/05-deployment/k8s").glob("*.yaml"))
+          assert len(paths) == 5
+          for path in paths:
+              for doc in yaml.safe_load_all(path.read_text()):
+                  assert doc["apiVersion"] and doc["kind"] and doc["metadata"]["name"]
+                  assert doc["kind"] != "Secret"
+                  if doc["kind"] == "Deployment":
+                      assert doc["spec"]["selector"]["matchLabels"] == doc["spec"]["template"]["metadata"]["labels"]
+          PY

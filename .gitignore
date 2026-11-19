@@ -171,3 +171,11 @@ Thumbs.db
 # Logs
 logs/
 *.log
+
+# Tutorial credentials and local tooling
+.env.*
+!.env.example
+**/db/password.txt
+**/*-secret.yaml
+.ruff_cache/
+.pyright/

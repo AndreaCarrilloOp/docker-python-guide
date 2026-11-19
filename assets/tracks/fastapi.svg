@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="244" height="244" viewBox="0 0 244 244" role="img" aria-labelledby="title description">
+  <title id="title">Start FastAPI</title>
+  <desc id="description">FastAPI with Redis. Select this learning path.</desc>
+  <!-- Framework icon: Simple Icons (simple-icons/simple-icons). -->
+  <rect x="1" y="1" width="242" height="242" rx="13" fill="#102824" stroke="#268e80" stroke-width="1.5"/>
+  <g transform="translate(91 27) scale(2.5833)" fill="#56d6c0">
+    <path d="M12 .0387C5.3729.0384.0003 5.3931 0 11.9988c-.001 6.6066 5.372 11.9628 12 11.9625 6.628.0003 12.001-5.3559 12-11.9625-.0003-6.6057-5.3729-11.9604-12-11.96m-.829 5.4153h7.55l-7.5805 5.3284h5.1828L5.279 18.5436q2.9466-6.5444 5.892-13.0896"/>
+  </g>
+  <g font-family="system-ui, -apple-system, Segoe UI, Arial, sans-serif" text-anchor="middle">
+    <text x="122" y="127" fill="#f3f5f7" font-size="27" font-weight="650">FastAPI</text>
+    <text x="122" y="153" fill="#79e0ce" font-size="15">Redis</text>
+    <rect x="29" y="181" width="186" height="37" rx="7" fill="#14675e"/>
+    <text x="122" y="204" fill="#ffffff" font-size="14" font-weight="600">Start tutorial &#8594;</text>
+  </g>
+</svg>
