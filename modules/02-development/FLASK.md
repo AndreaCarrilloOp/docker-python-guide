@@ -50,4 +50,4 @@ Stop the lab following [Compose cleanup](../../docs/lab-setup.md#compose) before
 
 ---
 
-[Course home](../../README.md) · [← Module 01](../01-containerization/FLASK.md) · [Module 03 →](../03-linting-typing/FLASK.md)
+[Flask modules](../../tracks/FLASK.md) · [← Module 01](../01-containerization/FLASK.md) · [Module 03 →](../03-linting-typing/FLASK.md)

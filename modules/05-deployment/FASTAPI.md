@@ -52,4 +52,4 @@ Confirm DELETE only to remove this track's resources. This completes the FastAPI
 
 ---
 
-[Course home](../../README.md) · [← Module 04](../04-cicd/FASTAPI.md) · Course complete
+[FastAPI modules](../../tracks/FASTAPI.md) · [← Module 04](../04-cicd/FASTAPI.md) · Course complete

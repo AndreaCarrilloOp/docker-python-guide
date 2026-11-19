@@ -40,4 +40,4 @@ See [.pre-commit-config.yaml](../../.pre-commit-config.yaml). If formatting chan
 
 ---
 
-[Course home](../../README.md) · [← Module 02](../02-development/FLASK.md) · [Module 04 →](../04-cicd/FLASK.md)
+[Flask modules](../../tracks/FLASK.md) · [← Module 02](../02-development/FLASK.md) · [Module 04 →](../04-cicd/FLASK.md)

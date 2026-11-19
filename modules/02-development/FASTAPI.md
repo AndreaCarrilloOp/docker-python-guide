@@ -47,4 +47,4 @@ Stop the lab following [Compose cleanup](../../docs/lab-setup.md#compose) before
 
 ---
 
-[Course home](../../README.md) · [← Module 01](../01-containerization/FASTAPI.md) · [Module 03 →](../03-linting-typing/FASTAPI.md)
+[FastAPI modules](../../tracks/FASTAPI.md) · [← Module 01](../01-containerization/FASTAPI.md) · [Module 03 →](../03-linting-typing/FASTAPI.md)

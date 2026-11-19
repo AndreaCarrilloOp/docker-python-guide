@@ -52,4 +52,4 @@ Confirm DELETE only to remove this track's resources, including its database vol
 
 ---
 
-[Course home](../../README.md) · [← Module 04](../04-cicd/FLASK.md) · Course complete
+[Flask modules](../../tracks/FLASK.md) · [← Module 04](../04-cicd/FLASK.md) · Course complete

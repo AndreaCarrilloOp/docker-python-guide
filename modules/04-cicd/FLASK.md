@@ -35,4 +35,4 @@ Stop Compose using [cleanup instructions](../../docs/lab-setup.md#compose).
 
 ---
 
-[Course home](../../README.md) · [← Module 03](../03-linting-typing/FLASK.md) · [Module 05 →](../05-deployment/FLASK.md)
+[Flask modules](../../tracks/FLASK.md) · [← Module 03](../03-linting-typing/FLASK.md) · [Module 05 →](../05-deployment/FLASK.md)

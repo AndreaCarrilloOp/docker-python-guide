@@ -2,9 +2,20 @@
 
 [Course home](../README.md)
 
+## Prerequisites
+
+Install Git, Python 3.11 and Docker with Compose v2. Docker Desktop Kubernetes and kubectl are needed only for module 05.
+
 ## Working directory
 
-Clone the repository once. Lesson paths are relative to the repository root unless specified. Use Bash (Git Bash or WSL on Windows); in PowerShell use `curl.exe` instead of the `curl` alias, and adapt quoting as needed. Stop a running lab before reusing its port.
+Clone the repository once:
+
+```bash
+git clone https://github.com/AndreaCarrilloOp/docker-python-guide.git
+cd docker-python-guide
+```
+
+ Lesson paths are relative to the repository root unless specified. Use Bash (Git Bash or WSL on Windows); in PowerShell use `curl.exe` instead of the `curl` alias, and adapt quoting as needed. Stop a running lab before reusing its port.
 
 ## Python environment
 
